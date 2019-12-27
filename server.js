@@ -29,11 +29,18 @@ const validTypes = [
   `Water`
 ];
 
+app.use(function validateBearerToken(req, res, next) {
+  console.log("validate bearer token middleware");
+  debugger;
+  // move to the next middleware
+  next();
+});
+
 function handleGetTypes(req, res) {
   res.json(validTypes);
 }
 
-app.get("/type", handleGetTypes);
+app.get("/types", handleGetTypes);
 
 function handleGetPokemon(req, res) {
   res.send("Hello, Pokemon!");
