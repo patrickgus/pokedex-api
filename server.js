@@ -35,6 +35,12 @@ function handleGetTypes(req, res) {
 
 app.get("/type", handleGetTypes);
 
+function handleGetPokemon(req, res) {
+  res.send("Hello, Pokemon!");
+}
+
+app.get("/pokemon", handleGetPokemon);
+
 const PORT = 8000;
 
 app.listen(PORT, () => {
